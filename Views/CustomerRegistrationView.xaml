@@ -1,0 +1,138 @@
+<UserControl x:Class="HotelManagerWpf.Views.CustomerRegistrationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="Transparent">
+
+    <Grid Margin="6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Customer Registration / Allot Room"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   Foreground="#065F46"
+                   Margin="0,0,0,24"/>
+
+        <Border Grid.Row="1"
+                Background="White"
+                CornerRadius="18"
+                Padding="26">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="10"
+                                  ShadowDepth="0"
+                                  Opacity="0.08"/>
+            </Border.Effect>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="34"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="Customer Info"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Foreground="#065F46"
+                               Margin="0,0,0,18"/>
+
+                    <TextBlock Text="Full Name"
+                               Foreground="#334155"
+                               FontWeight="SemiBold"/>
+
+                    <TextBox x:Name="FullNameTextBox"
+                             Margin="0,6,0,12"/>
+
+                    <TextBlock Text="Phone Number"
+                               Foreground="#334155"
+                               FontWeight="SemiBold"/>
+
+                    <TextBox x:Name="PhoneTextBox"
+                             Margin="0,6,0,12"/>
+
+                    <TextBlock Text="Email"
+                               Foreground="#334155"
+                               FontWeight="SemiBold"/>
+
+                    <TextBox x:Name="EmailTextBox"
+                             Margin="0,6,0,12"/>
+
+                    <TextBlock Text="Identity Number"
+                               Foreground="#334155"
+                               FontWeight="SemiBold"/>
+
+                    <TextBox x:Name="IdentityTextBox"
+                             Margin="0,6,0,12"/>
+
+                    <TextBlock Text="Address"
+                               Foreground="#334155"
+                               FontWeight="SemiBold"/>
+
+                    <TextBox x:Name="AddressTextBox"
+                             Margin="0,6,0,12"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2">
+                    <TextBlock Text="Booking Info"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Foreground="#065F46"
+                               Margin="0,0,0,18"/>
+
+                    <TextBlock Text="Available Room"
+                               Foreground="#334155"
+                               FontWeight="SemiBold"/>
+
+                    <ComboBox x:Name="RoomComboBox"
+                              Margin="0,6,0,12">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding RoomNumber}" FontWeight="SemiBold"/>
+                                    <TextBlock Text=" - " Foreground="#64748B"/>
+                                    <TextBlock Text="{Binding RoomType}"/>
+                                    <TextBlock Text=" / " Foreground="#64748B"/>
+                                    <TextBlock Text="{Binding BedType}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+
+                    <TextBlock Text="Check In Date"
+                               Foreground="#334155"
+                               FontWeight="SemiBold"/>
+
+                    <DatePicker x:Name="CheckInDatePicker"
+                                Margin="0,6,0,12"/>
+
+                    <TextBlock Text="Estimated Total Price"
+                               Foreground="#334155"
+                               FontWeight="SemiBold"/>
+
+                    <TextBox x:Name="TotalPriceTextBox"
+                             Margin="0,6,0,18"/>
+
+                    <Button Content="Register Customer"
+                            Height="42"
+                            Margin="0,0,0,12"
+                            Background="#22C55E"
+                            Foreground="White"
+                            FontWeight="SemiBold"
+                            BorderThickness="0"
+                            Click="RegisterButton_Click"/>
+
+                    <Button Content="Refresh Rooms"
+                            Height="42"
+                            Background="#94A3B8"
+                            Foreground="White"
+                            FontWeight="SemiBold"
+                            BorderThickness="0"
+                            Click="RefreshButton_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

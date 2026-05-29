@@ -1,0 +1,33 @@
+<UserControl x:Class="HotelManagerWpf.Views.CustomerDetailsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+        <TextBlock Text="Customer Details" FontSize="30" FontWeight="Bold" Foreground="#064E3B" Margin="0,0,0,16"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,12">
+            <Button Content="All Customers" Background="#22C55E" Foreground="White" Click="AllButton_Click"/>
+            <Button Content="Current Customers" Background="#16A34A" Foreground="White" Click="CurrentButton_Click"/>
+            <Button Content="Checked Out Customers" Background="#64748B" Foreground="White" Click="CheckedOutButton_Click"/>
+            <Button Content="Refresh" Background="#94A3B8" Foreground="White" Click="RefreshButton_Click"/>
+        </StackPanel>
+        <Border Grid.Row="2" Background="White" CornerRadius="18" Padding="16">
+            <DataGrid x:Name="CustomersDataGrid"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      HorizontalScrollBarVisibility="Auto">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Booking ID" Binding="{Binding BookingId}" Width="90"/>
+                    <DataGridTextColumn Header="Customer" Binding="{Binding FullName}" Width="160"/>
+                    <DataGridTextColumn Header="Phone" Binding="{Binding Phone}" Width="120"/>
+                    <DataGridTextColumn Header="Identity" Binding="{Binding IdentityNumber}" Width="120"/>
+                    <DataGridTextColumn Header="Room" Binding="{Binding RoomNumber}" Width="90"/>
+                    <DataGridTextColumn Header="Room Type" Binding="{Binding RoomType}" Width="120"/>
+                    <DataGridTextColumn Header="Check In" Binding="{Binding CheckInDate}" Width="130"/>
+                    <DataGridTextColumn Header="Check Out" Binding="{Binding CheckOutDate}" Width="130"/>
+                    <DataGridTextColumn Header="Total" Binding="{Binding TotalPrice}" Width="110"/>
+                    <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="100"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</UserControl>
