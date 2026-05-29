@@ -1,0 +1,10 @@
+namespace HotelManagerWpf.PhanAiMoRong
+{
+    public static class UserRole
+    {
+        public const string Admin = "Admin";
+        public const string Manager = "Manager";
+        public const string Staff = "Staff";
+        public const string Receptionist = "Receptionist";
+    }
+}
